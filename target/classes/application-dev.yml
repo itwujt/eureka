@@ -1,0 +1,18 @@
+server:
+  port: 1111
+spring:
+  application:
+    name: EUREKA-SERVER
+  freemarker:
+    suffix: .ftl
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
